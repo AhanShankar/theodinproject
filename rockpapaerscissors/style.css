@@ -1,0 +1,20 @@
+
+.useroptions
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 14vh;
+}
+.useroptions img{
+    margin: 25px;
+    max-width: 92px;
+    height: 102px;
+    object-fit: cover;
+    /* border: 1px solid black; */
+}
+.useroptions img:hover{
+   transition: transform .5s;
+   transform: scale(1.2);
+}

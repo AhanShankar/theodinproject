@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="style.css">
+    </header>
+    <head>
+        <title>
+                Rock Paper Scissors game!
+        </title>
+    </head>
+    <body>
+        <div class="useroptions">
+            <div class="rock">
+                <img src="rock.png" alt="">
+                
+            </div>
+            <div class="paper">
+                <img src="paper.png" alt="">
+            </div>
+    
+            <div class="scissors">
+                <img src="scissors.png" alt="">
+            </div>
+        </div>
+        <script>
+            
+            function computerchoice()
+            {
+                let arr= ["rock","paper","scissors"];
+                const rndInt = Math.floor(Math.random() * 3 ) ;
+                return arr[rndInt];
+            }
+            function game(e)
+            {
+                // const userinput=e.path[6].comp;
+                // console.log(userinput);
+                const userinput=e.path[1].className;
 
+                let useropimage=document.createElement('img');
+                useropimage.src=e.path[0].src;
+                useropimage.setAttribute('height','200px');
+                useropimage.setAttribute('width','180px');
+                useropimage["object-fit"]="cover";
+
+                body=document.body;
+                body.insertBefore(useropimage,body.firstElementChild);
+
+                comp=computerchoice();
+
+                if(userinput==="rock")
+                {
+                    if(comp==="paper")
+                        return "computerwins";
+                    else if(comp==="scissors")
+                        return "userwins";
+                    else
+                        return "draw";
+                }
+                if(userinput==="paper")
+                {
+                    if(comp=="scissors")
+                        return "computerwins";
+                    else if(comp==="rock")
+                        return "userwins";
+                    else
+                        return "draw";
+                }
+                if(userinput==="scissors")
+                {   
+                    if(comp=="rock")
+                        return "computerwins";
+                    else if(comp==="paper")
+                        return "userwins";
+                    else
+                        return "draw";
+                }
+                return "Invalid input";
+            }
+            const options=Array.from(document.querySelectorAll(".useroptions img"));
+            options.forEach(option => {option.addEventListener("click",game)
+                
+            });
+
+
+        </script>
+    </body>
+</html>
