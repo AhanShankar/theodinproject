@@ -9,7 +9,14 @@
         </title>
     </head>
     <body>
+        <h1> Rock Paper Scissors game</h1>
+        <div class="computeroptions">
+           
+        </div>
         <div class="useroptions">
+            <div id="userselectedoption">
+            </div>
+            <div class="useroptionimages">
             <div class="rock">
                 <img src="rock.png" alt="">
                 
@@ -21,32 +28,13 @@
             <div class="scissors">
                 <img src="scissors.png" alt="">
             </div>
+            </div>
         </div>
         <script>
-            
-            function computerchoice()
+            let userscore=0;
+            let computerscore=0;
+            function roundwinner(userinput,comp)
             {
-                let arr= ["rock","paper","scissors"];
-                const rndInt = Math.floor(Math.random() * 3 ) ;
-                return arr[rndInt];
-            }
-            function game(e)
-            {
-                // const userinput=e.path[6].comp;
-                // console.log(userinput);
-                const userinput=e.path[1].className;
-
-                let useropimage=document.createElement('img');
-                useropimage.src=e.path[0].src;
-                useropimage.setAttribute('height','200px');
-                useropimage.setAttribute('width','180px');
-                useropimage["object-fit"]="cover";
-
-                body=document.body;
-                body.insertBefore(useropimage,body.firstElementChild);
-
-                comp=computerchoice();
-
                 if(userinput==="rock")
                 {
                     if(comp==="paper")
@@ -58,6 +46,7 @@
                 }
                 if(userinput==="paper")
                 {
+                    
                     if(comp=="scissors")
                         return "computerwins";
                     else if(comp==="rock")
@@ -67,6 +56,7 @@
                 }
                 if(userinput==="scissors")
                 {   
+                    
                     if(comp=="rock")
                         return "computerwins";
                     else if(comp==="paper")
@@ -76,11 +66,93 @@
                 }
                 return "Invalid input";
             }
+            
+            function computerchoice()
+            {
+                let arr= ["rock","paper","scissors"];
+                const rndInt = Math.floor(Math.random() * 3 ) ;
+                return arr[rndInt];
+            }
+            function displaycomputerchoice(computerchoice)
+            {
+                    let imgsrc=computerchoice+".png";
+
+                    let compimage=document.createElement('img');
+                    compimage.src=imgsrc;
+                    compimage.setAttribute('height','112px');
+                    compimage.setAttribute('max-width','102px');
+  
+                    let computerdiv=document.getElementsByClassName("computeroptions");
+                    computerdiv[0].removeChild(computerdiv[0].lastChild);
+                    computerdiv[0].appendChild(compimage);
+                
+                
+            }
+            function game(e)
+            {
+                const userinput=e.path[1].className;
+
+                let useropimage=document.createElement('img');
+                useropimage.src=e.path[0].src;
+                useropimage.setAttribute('height','112px');
+                useropimage.setAttribute('max-width','102px');
+                useropimage["object-fit"]="cover";
+
+                let useroptiondiv=document.getElementById("userselectedoption");
+                useroptiondiv.removeChild(useroptiondiv.lastChild);
+                useroptiondiv.appendChild(useropimage);
+
+
+                let comp=computerchoice();
+                displaycomputerchoice(comp);
+                let result=roundwinner(userinput,comp);
+
+                
+
+                if(result==="userwins")
+                {
+                    userscore++;
+                    useroptiondiv.classList.remove('shakeimage');
+                    useroptiondiv.offsetWidth;
+                    useroptiondiv.classList.add('shakeimage');
+                    // useroptiondiv.style.animation='shake 0.5s 1';
+                    
+                }
+                else if(result==="computerwins")
+                {
+                    computerscore++;
+                    let computerdiv=document.getElementsByClassName("computeroptions");
+                    computerdiv[0].classList.remove('shakeimage');
+                    computerdiv[0].offsetWidth;
+                    computerdiv[0].classList.add('shakeimage');
+                }
+                let scoreboard=document.createElement('h2');
+                scoreboard.textContent="User: "+userscore+"  Computer: "+computerscore;
+                scoreboard.align="center";
+
+                body=document.body;
+                body.removeChild(body.lastChild);
+                body.appendChild(scoreboard);
+
+                if(userscore===5)
+                {
+                    scoreboard.textContent="You win! Choose option to play again.";
+                    userscore=0;
+                    computerscore=0;
+                }
+                if(computerscore===5)
+                {
+                    scoreboard.textContent="You lose! Choose option to play again";
+                    userscore=0;
+                    computerscore=0;
+                }
+
+            }
+                
             const options=Array.from(document.querySelectorAll(".useroptions img"));
             options.forEach(option => {option.addEventListener("click",game)
-                
             });
-
+            
 
         </script>
     </body>
