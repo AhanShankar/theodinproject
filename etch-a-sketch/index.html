@@ -1,1 +1,28 @@
+<!DOCTYPE html>
 
+<html>
+    <head>
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            Etch-A-Sketch!
+        </header>
+        <div id="content">
+            <div id="menu">
+                <h3 id="gridsize">10x10</h3>
+                <button id="ClearButton">Clear</button>
+                <br> 
+                <button id="RGB">RGB patch: off</button>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="50" value="10" class="slider" id="myRange">
+                  </div>
+            </div>  
+            <div id="container">
+            </div>
+        </div>
+        
+    </body>
+    <script src="script.js"></script>
+</html>
