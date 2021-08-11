@@ -1,0 +1,42 @@
+#home_container
+{
+    padding: 20px;
+}
+#home_text
+{
+
+    justify-content: center;
+    text-align: justify;
+    font-size: 40px;
+    font-weight: lighter;
+    line-height: 70px;
+}
+h2{
+    font-size: 60px;
+    text-align: center;
+    margin: 120px;
+    font-weight: lighter;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#foundersection
+{
+    display: inline-block;
+}
+#founderimage
+{
+    border: transparent;
+    border-radius: 50%;
+    shape-outside:ellipse();
+    float: left;
+    margin-right: 50px;
+}
+#foundertext
+{
+    font-size: 40px;
+    line-height: 70px;
+    text-align: justify;
+}
+#founderimage
+{
+    filter: brightness(80%);
+}

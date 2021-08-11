@@ -1,0 +1,38 @@
+.menu_item
+{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    padding: 20px;
+    height: 190px;
+    margin-top: 30px ;
+    margin-bottom: 30px;
+    /* box-shadow: 0px 15px 10px -15px rgb(151, 147, 147); */
+}
+.menu_item img
+{
+    border: 2px solid white;
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row:  1/4;
+    margin: 10px;
+}
+.item_name
+{
+    grid-column: 2/6;
+    grid-row: 1/2;
+    margin-left: 40px;
+    font-size: 60px;
+    margin-left: -10px;
+}
+
+.item_description
+{
+    grid-row: 2/auto;
+    grid-column: 2/6;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-left: -10px;
+    font-size: 30px;
+    font-style: italic;
+}
