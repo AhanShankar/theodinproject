@@ -4,7 +4,7 @@
 {
     background-color: rgb(214 229 184);
     margin: -10px;
-    height: 400px;
+    height: 30vh;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -15,8 +15,6 @@ img
     grid-row: 1/5;
     grid-column: 1/end;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-
-
 }
 #header_title
 {
@@ -28,6 +26,7 @@ img
     font-size: 120px;
     font-stretch: ultra-expanded;
     white-space: nowrap;
+    word-spacing: 15px;
 
     overflow: visible;
     display: flex;
@@ -49,7 +48,7 @@ img
     grid-column: 6/span 2 ;
     /* grid-column: span 2; */
     
-    font-size: 60px;
+    font-size: 50px;
     font-family: 'Open Sans', sans-serif;
     /* border:1px solid black; */
     padding: 20px;
