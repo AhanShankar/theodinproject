@@ -18,12 +18,12 @@ img
 }
 #header_title
 {
-    height: 50px;
+    height: 8vmin;
     padding: 10px;
-    width: 250px;
+    width: 25vmin;
 
     font-family: 'Mr De Haviland', cursive;
-    font-size: 120px;
+    font-size: 12vmin;
     font-stretch: ultra-expanded;
     white-space: nowrap;
     word-spacing: 15px;
