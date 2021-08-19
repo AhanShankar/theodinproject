@@ -48,7 +48,7 @@ img
     grid-column: 6/span 2 ;
     /* grid-column: span 2; */
     
-    font-size: 50px;
+    font-size: 4vmin;
     font-family: 'Open Sans', sans-serif;
     /* border:1px solid black; */
     padding: 20px;

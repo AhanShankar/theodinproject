@@ -10,7 +10,8 @@
     overflow:auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    max-height: 420px;
+    height: 50vmin;
+    /* max-height: 420px; */
 }
 #projectnameinput
 {
@@ -21,7 +22,7 @@
     padding: 10px;
     caret-color: #ff0077;
     color: #ff0077;
-    font-size: 1.5rem;
+    font-size: 2.5vmin;
 }
 #projectnameinput:focus
 {
@@ -63,7 +64,7 @@
 .title
 {
     font-family: monospace;
-    font-size: 2.5rem;
+    font-size: 4vmin;
     color: #ff0077;
     margin-bottom: 5%;
 }
@@ -74,14 +75,14 @@
     align-content: flex-start;
     color: #48c5a6; 
     font-family: 'Raleway';
-    font-size: 20px;
+    font-size: 2vmin;
     font-weight: bolder;
     margin-left: 5%;
 }
 .duedate
 {
     font-family: 'Open Sans';
-    font-size: 15px;
+    font-size: 1.7vmin;
     font-style: italic;
     margin-left: 10%;
     display: inline-flex;
