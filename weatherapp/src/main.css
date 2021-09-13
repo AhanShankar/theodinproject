@@ -1,0 +1,52 @@
+body
+{
+    background: #424242;
+}
+#content
+{
+    width: 100%;
+    margin-top: 30vh;
+}
+input{
+    width: 30%;
+    margin-left: 30%;
+    border: none;
+    border-radius: 1.5vw;
+    height: 5vh;
+    margin-right: 2%;
+    background: #5f5f5f;
+    padding: 0 1vw;
+    font-size: 1.5rem;
+    color: rgb(255 0 207);
+}
+input:focus
+{
+    outline-width: 0;
+}
+button
+{
+    height: 5vh;
+    width: 5%;
+    border: none;
+    border-radius: 1vw;
+    background: rgb(184, 17, 109);
+    color: white;
+}
+button:hover
+{
+    background: hotpink;
+}
+#weatherinfo
+{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#weatherinfo *
+{
+    color: white;
+    font-size: 2rem;
+    font-weight:500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

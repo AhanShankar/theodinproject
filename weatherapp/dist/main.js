@@ -1,0 +1,1 @@
+console.log("test"),API_KEY="88de47e74939d0f42821a2d4fb9cdc90",async function(){let e=await fetch("http://api.openweathermap.org/data/2.5/weather?q=London&APPID="+API_KEY,{mode:"cors"});e.then((()=>{console.log(e.data)}))}();
