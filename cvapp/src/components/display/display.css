@@ -1,0 +1,53 @@
+.General {
+  background-color: rgb(130 139 94);
+  padding: 1% 5%;
+}
+.General * {
+  margin: 1% 0;
+}
+.Edu {
+  margin: 5%;
+  width: 70%;
+  color: #dcdedd;
+}
+.Edu * {
+  margin: 1%;
+  font-size: x-large;
+}
+.Prac {
+  margin: 5%;
+  width: 70%;
+  color: #dcdedd;
+}
+.Prac * {
+  margin: 1%;
+  font-size: x-large;
+}
+#companyname {
+  margin-left: -1%;
+  font-size: 3vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#schoolname {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3vw;
+  font-style: italic;
+  margin-left: -1%;
+  margin-bottom: 3%;
+}
+#name {
+  font-size: 10vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #dcdedd;
+}
+#email {
+  font-size: xx-large;
+  color: #dcdedd;
+  /* font-weight: lighter; */
+}
+#phonenumber {
+  font-size: xx-large;
+  color: #dcdedd;
+
+  /* font-weight: lighter; */
+}
