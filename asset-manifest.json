@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/theodinproject/cvapp/static/css/main.1a666a8e.css",
+    "main.js": "/theodinproject/cvapp/static/js/main.811720b7.js",
+    "static/js/787.5d1af729.chunk.js": "/theodinproject/cvapp/static/js/787.5d1af729.chunk.js",
+    "index.html": "/theodinproject/cvapp/index.html",
+    "main.1a666a8e.css.map": "/theodinproject/cvapp/static/css/main.1a666a8e.css.map",
+    "main.811720b7.js.map": "/theodinproject/cvapp/static/js/main.811720b7.js.map",
+    "787.5d1af729.chunk.js.map": "/theodinproject/cvapp/static/js/787.5d1af729.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a666a8e.css",
+    "static/js/main.811720b7.js"
+  ]
+}
