@@ -23,7 +23,6 @@ class GeneralForm extends Component {
           name="generalinfophonenumber"
           placeholder="Phone no."
         ></input>
-        <button type="submit">Submit</button>
       </form>
     );
   }

@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      generalinfoname: "",
+      generalinfoname: "Enter Name",
       generalinfoemail: "",
       generalinfophonenumber: "",
 
@@ -26,31 +26,38 @@ class App extends Component {
       practical_exp_start_date: "",
 
       generalinfo_array: [],
-      edu_exp_array: [],
-      practical_exp_array: [],
+      edu_exp_array: [{}],
+      practical_exp_array: [{}],
     };
   }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+  handleChange = (e, callback) => {
+    this.setState(
+      {
+        [e.target.name]: e.target.value,
+      },
+      callback
+    );
   };
-  handleGeneralSubmit = (e = null) => {
+  handleGeneralChange = (e = null) => {
     if (e) e.preventDefault();
-    let obj = {
-      id: uniqid(),
-      name: this.state.generalinfoname,
-      email: this.state.generalinfoemail,
-      phonenumber: this.state.generalinfophonenumber,
+
+    const callback = () => {
+      let obj = {
+        name: this.state.generalinfoname,
+        email: this.state.generalinfoemail,
+        phonenumber: this.state.generalinfophonenumber,
+      };
+      this.setState({
+        generalinfo_array: [obj],
+      });
     };
-    this.setState({
-      generalinfo_array: this.state.generalinfo_array.concat(obj),
-    });
+    this.handleChange(e, callback);
   };
-  handleEduSubmit = (e, id) => {
-    if (e) {
-      e.preventDefault();
+  handleEduChange = (e, id) => {
+    e.preventDefault();
+
+    let callback = () => {
       let obj = {
         id: uniqid(),
         school_name: this.state.edu_exp_school_name,
@@ -58,51 +65,80 @@ class App extends Component {
         study_date: this.state.edu_exp_study_date,
       };
       this.setState({
-        edu_exp_array: this.state.edu_exp_array.concat(obj),
+        edu_exp_array: [
+          ...this.state.edu_exp_array.slice(0, id),
+          { obj },
+          ...this.state.edu_exp_array.slice(id + 1),
+        ],
       });
-    }
+    };
+    this.handleChange(e, callback);
+  };
+  handlePracChange = (e, id) => {
+    const callback = () => {
+      let obj = {
+        id: uniqid(),
+        practical_exp_company_name: this.state.practical_exp_company_name,
+        practical_exp_position_title: this.state.practical_exp_position_title,
+        practical_exp_tasks: this.state.practical_exp_tasks,
+        practical_exp_start_date: this.state.practical_exp_start_date,
+      };
+      this.setState({
+        practical_exp_array: [
+          ...this.state.practical_exp_array.slice(0, id),
+          { obj },
+          ...this.state.practical_exp_array.slice(id + 1),
+        ],
+      });
+    };
+    this.handleChange(e, callback);
+  };
+  handleEduSubmit = (e) => {
+    e.preventDefault();
+
+    this.setState(
+      {
+        edu_exp_array: this.state.edu_exp_array.concat(
+          this.state.edu_exp_array[0]
+        ),
+      },
+    );
   };
   handlePracSubmit = (e) => {
     e.preventDefault();
-    let obj = {
-      id: uniqid(),
-      practical_exp_company_name: this.state.practical_exp_company_name,
-      practical_exp_position_title: this.state.practical_exp_position_title,
-      practical_exp_tasks: this.state.practical_exp_tasks,
-      practical_exp_start_date: this.state.practical_exp_start_date,
-    };
+
     this.setState(
       {
-        practical_exp_array: this.state.practical_exp_array.concat(obj),
+        practical_exp_array: this.state.practical_exp_array.concat(
+          this.state.practical_exp_array[0]
+        ),
       },
-      () => {
-        console.log(this.state.practical_exp_array);
-      }
     );
   };
-  // handleGeneralChange();
+
   render() {
     return (
       <div id="container">
         <div id="inputsection">
-          <div className="formcontainer">
-            <GeneralForm
-              changefunc={this.handleChange}
-              submitFunc={this.handleGeneralSubmit}
-            />
-          </div>
-          <div className="formcontainer">
-            <EduForm
-              changefunc={this.handleChange}
-              submitFunc={this.handleEduSubmit}
-            />
-          </div>
-          <div className="formcontainer">
-            <PracForm
-              changefunc={this.handleChange}
-              submitFunc={this.handlePracSubmit}
-            />
-          </div>
+          <GeneralForm changefunc={this.handleGeneralChange} />
+          {this.state.edu_exp_array.map((el, ind) => {
+            return (
+              <EduForm
+                id={ind}
+                changefunc={this.handleEduChange}
+                submitFunc={this.handleEduSubmit}
+              />
+            );
+          })}
+          {this.state.practical_exp_array.map((el, ind) => {
+            return (
+              <PracForm
+                id={ind}
+                changefunc={this.handlePracChange}
+                submitFunc={this.handlePracSubmit}
+              />
+            );
+          })}
         </div>
         <div id="cvsection">
           <GeneralDisplay g_info_array={this.state.generalinfo_array} />

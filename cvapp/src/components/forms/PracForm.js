@@ -6,34 +6,43 @@ class PracForm extends Component {
   }
   render() {
     const changefunc = this.props.changefunc;
+    let id = this.props.id;
     return (
       <form onSubmit={this.props.submitFunc}>
         <div className="header">Practical Experience</div>
         <input
           type="text"
-          onChange={changefunc}
+          onChange={(e) => {
+            changefunc(e, id);
+          }}
           name="practical_exp_company_name"
-          placeholder='Company name'
+          placeholder="Company name"
         ></input>
         <input
           type="text"
-          onChange={changefunc}
+          onChange={(e) => {
+            changefunc(e, id);
+          }}
           name="practical_exp_position_title"
-          placeholder='Position title'
+          placeholder="Position title"
         ></input>
         <input
           type="text"
-          onChange={changefunc}
+          onChange={(e) => {
+            changefunc(e, id);
+          }}
           name="practical_exp_tasks"
-          placeholder='Tasks'
+          placeholder="Tasks"
         ></input>
         <input
           type="text"
-          onChange={changefunc}
+          onChange={(e) => {
+            changefunc(e, id);
+          }}
           name="practical_exp_start_date"
-          placeholder='Start date'
+          placeholder="Start date"
         ></input>
-        <button type="submit">Submit</button>
+        <button >Add</button>
       </form>
     );
   }

@@ -1,20 +1,12 @@
-.formcontainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  height: 20%;
-  margin-left: 5%;
-}
+
 .header {
-  font-size: x-large;
+  /* font-size: x-large; */
   font-weight: bold;
   color: #e6e6e6;
 }
 form input {
   color: #e6e6e6;
-  font-size: large;
+  /* font-size: large; */
   padding-left: 2%;
   border: none;
   border-radius: 5px;
@@ -29,9 +21,13 @@ button {
   background-color: #a7d5a7;
   border: none;
   height: 4vh;
-  width: 10vw;
+  width: 5vw;
   margin-top: 1vh;
+  padding-left: 5%;
+  text-align: left;
   border-radius: 2px;
-  font-size: larger;
   font-weight: bold;
+}
+form{
+  margin:5%;
 }
